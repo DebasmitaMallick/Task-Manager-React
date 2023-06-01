@@ -1,38 +1,172 @@
-.App {
+:root {
+  --blue : #3e98c7;
+  --darkBlue : #066fa8;
+  --dark : #2a2e35;
+  --black : #1e2328;
+  --grey : #b8bcc540;
+  --light : #dde0e4;
+  --red : #fb1515;
+  --yellow : orange;
+}
+body {
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 3em;
+}
+
+.newTaskSection input[type="text"] {
+  width: 26.6em;
+  padding: 8px 10px;
+  outline: none;
+  border-right: 0;
+  border-bottom: 4px solid var(--blue);
+  background-color: var(--black);
+  color: var(--light);
+  font-size: 18px;
+}
+
+.mainContainer > div > section:nth-child(2) {
+  width: 35em;
+  margin: auto;
+}
+
+button {
+  margin: 0 10px;
+  padding: 9px 14px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.addBtn {
+  background-color: var(--blue);
+  transition: 0.5s;
+  color: white;
+  scale: 1.2;
+}
+
+.addBtn:hover {
+  background-color: var(--darkBlue);
+}
+
+.task {
+  padding: 12px 6px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.task input[type=text] {
+  border: none;
+  outline: none;
+  padding: 3px 6px;
+  font-size: 16px;
+}
+
+.newTaskSection {
+  padding-bottom: 43px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.checkBtn {
+  margin-right: 10px;
+  padding: 3px 8px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.task span {
+  display: inline-flex;
+  font-size: 18px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.completedTask {
+  background-color: var(--blue);
+  color: black;
+}
+
+.incompleteTask {
+  background-color: var(--grey);
+}
+
+.actionBtns {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.actionBtns > span {
+  cursor: pointer;
+  transition: 0.5s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.actionBtns > span:first-child:hover {
+  color: var(--yellow);
+}
+
+.actionBtns > span:nth-child(2) {
+  margin: 0 8px;
+}
+
+.actionBtns > span:nth-child(2):hover {
+  color: var(--red);
+}
+
+.statistics {
+  background: white;
+  padding: 30px 29px;
+  position: relative;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.statistics .txt {
+  position: absolute;
+  bottom: 187px;
+  left: 128px;
+  color: #3e98c7;
+}
+
+.statistics .info {
+  margin-top: 10px;
+  font-size: 20px;
+  color: var(--blue);
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 935px) {
+  .mainContainer {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .statistics {
+    margin: auto;
+    width: 19em;
+    margin-top: 3em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .newTaskSection input[type="text"] {
+    width: 15.6em;
+  }
+  .mainContainer > div > section:nth-child(2) {
+    width: 22.7em;
+  }
+}
+
+@media only screen and (max-width: 389px) {
+  .newTaskSection input[type="text"] {
+    width: 14.6em;
+  }
+  .mainContainer > div > section:nth-child(2) {
+    width: 21.3em;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  .newTaskSection input[type="text"] {
+    width: 9.6em;
   }
 }
